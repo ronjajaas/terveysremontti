@@ -1,0 +1,160 @@
+body {
+    font: 400, 15px;
+    line-height: 1.8;
+    font-family: 'Quicksand', sans-serif;
+    padding-top: 80px;
+    position: relative;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.padding {
+    padding: 60px 50px;
+    text-align: center;   
+}
+
+/* navigaatio */ 
+
+.navbar {
+    margin-bottom: 0;
+    background-color:#47d147;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand {
+    letter-spacing: 4px;
+}
+
+.nav-justified li a {
+    letter-spacing: 2px;
+}
+
+.nav-justified li a:hover, .nav-justified li.active a {
+    color: black !important;
+    background-color:white !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color:black !important;
+}
+
+.navbar-default .navbar-text{
+    color: white;
+}
+
+/* karuselli */
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+    height: 590px;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color:black;
+}
+
+.carousel-indicators li {
+    border-color:black;
+}
+
+.carousel-indicators li.active {
+    background-color:black;
+    color:black;
+}
+
+.carousel-caption {
+    color:black;
+}
+
+/* jumbotron */
+
+.jumbotron { 
+    background-color: #ff751a;
+    color: white;
+    padding: 100px 0px;
+} 
+
+.jumbotron h1 {
+    margin-bottom: 30px;
+} 
+
+.yhteys h1 {
+    text-transform: uppercase;
+}
+
+/* ajankohtaista */
+
+.ajankohtaista h2, .yritys h2 {
+    font-weight: bold;
+}
+
+/* hinnasto */
+
+.hinnasto {
+    font-size: 20px;
+}
+
+.panel-default>.panel-heading{
+    background-color: #ff751a;
+    color: white;
+}
+
+.boksit {
+    padding-top: 30px;
+}
+
+/* yritys */
+
+.bg-white {
+    padding: 60px 50px;
+    background-color:white;
+}    
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0; 
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+/* liikunta */
+
+.input-group {
+    color:black;
+}
+
+.table, tr, thead, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: 0.5px;
+	text-align: center;
+}
+
+th {
+	background-color:#47d147;
+}
+	
+td {
+	background-color: white;
+}
+
+
