@@ -1,0 +1,62 @@
+body {
+    font: 400, 15px;
+    line-height: 1.8;
+    font-family: 'Quicksand', sans-serif;
+}
+
+a, a:hover {
+  color: #236823;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 70px 0 20px;
+}
+
+.padding {
+    padding: 25px 0;
+    text-align: center;   
+}
+
+.sairaus label {
+    margin-right: 10px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color:#47d147;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand {
+    letter-spacing: 4px;
+}
+
+.nav-justified li a {
+    letter-spacing: 2px;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color:black !important;
+}
+
+.navbar-default .navbar-text{
+    color: white;
+}
+
+.thumbnail {
+    padding: 0 10px 20px;
+    border-radius: 0; 
+    background: #ecfaec;
+    border: 1px solid #daf5da;
+}
