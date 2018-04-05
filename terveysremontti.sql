@@ -165,5 +165,134 @@ Values (5551, "En inhoa mitään! :)"),
 	   (5553, "En tykkää korianterista enkä sipulista."),
 	   (5554, "Kaikkiruokainen");
 								
+Update terveysremontti.login
+	SET UserID = 1111
+	WHERE LoginID = 111
+	
+Update terveysremontti.login
+	SET UserID = 1112
+	WHERE LoginID = 112
+	
+Update terveysremontti.login
+	SET UserID = 1113
+	WHERE LoginID = 113
+	
+Update terveysremontti.login
+	SET UserID = 1114
+	WHERE LoginID = 114
+	
+Update terveysremontti.kayttaja
+	SET TaustaID = 2221
+	WHERE UserID = 1111
+	
+Update terveysremontti.kayttaja
+	SET TaustaID = 2222
+	WHERE UserID = 1112
+	
+Update terveysremontti.kayttaja
+	SET TaustaID = 2223
+	WHERE UserID = 1113
+
+Update terveysremontti.kayttaja
+	SET TaustaID = 2224
+	WHERE UserID = 1114	
+	
+Update terveysremontti.kayttaja
+	SET TerveysID = 3331
+	WHERE UserID = 1111
+	
+Update terveysremontti.kayttaja
+	SET TerveysID = 3332
+	WHERE UserID = 1112
+	
+Update terveysremontti.kayttaja
+	SET TerveysID = 3333
+	WHERE UserID = 1113
+	
+Update terveysremontti.kayttaja
+	SET TerveysID = 3334
+	WHERE UserID = 1114
+	
+Update terveysremontti.kayttaja
+	SET RuokaID = 4441, InhokkiID = 5551, LoginID = 111
+    WHERE UserID = 1111
+	
+Update terveysremontti.kayttaja
+	SET RuokaID = 4442, InhokkiID = 5552, LoginID = 112
+    WHERE UserID = 1112
+	
+Update terveysremontti.kayttaja
+	SET RuokaID = 4443, InhokkiID = 5553, LoginID = 113
+    WHERE UserID = 1113
+	
+Update terveysremontti.kayttaja
+	SET RuokaID = 4444, InhokkiID = 5554, LoginID = 114
+    WHERE UserID = 1114
+	
+Update terveysremontti.taustatiedot
+	SET UserID = 1111
+	WHERE TaustaID = 2221
+	
+Update terveysremontti.taustatiedot
+	SET UserID = 1112
+	WHERE TaustaID = 2222
+	
+Update terveysremontti.taustatiedot
+	SET UserID = 1113
+	WHERE TaustaID = 2223
+	
+Update terveysremontti.taustatiedot
+	SET UserID = 1114
+	WHERE TaustaID = 2224
+	
+Update terveysremontti.terveydentila
+	SET UserID = 1111
+	WHERE TerveysID = 3331
+	
+Update terveysremontti.terveydentila
+	SET UserID = 1112
+	WHERE TerveysID = 3332
+	
+Update terveysremontti.terveydentila
+	SET UserID = 1113
+	WHERE TerveysID = 3333
+
+Update terveysremontti.terveydentila
+	SET UserID = 1114
+	WHERE TerveysID = 3334	
+
+	
+Update terveysremontti.ruokarajoitteet
+	SET UserID = 1111
+	WHERE RuokaID = 4441	
+
+Update terveysremontti.ruokarajoitteet
+	SET UserID = 1112
+	WHERE RuokaID = 4442		
 			
+Update terveysremontti.ruokarajoitteet
+	SET UserID = 1113
+	WHERE RuokaID = 4443	
+
+Update terveysremontti.ruokarajoitteet
+	SET UserID = 1114
+	WHERE RuokaID = 4444	
+
+
+Update terveysremontti.inhokkiruoat
+	SET UserID = 1111
+	WHERE InhokkiID = 5551	
+	
+Update terveysremontti.inhokkiruoat
+	SET UserID = 1112
+	WHERE InhokkiID = 5552	
+	
+Update terveysremontti.inhokkiruoat
+	SET UserID = 1113
+	WHERE InhokkiID = 5553	
+	
+Update terveysremontti.inhokkiruoat
+	SET UserID = 1114
+	WHERE InhokkiID = 5554	
+				
 						
