@@ -57,48 +57,48 @@
 
 			<div class="row">
 				<div class="form-group col-xs-6 col-sm-4 col-md-5">
-				    <label for="exampleInputEmail1">Etunimi</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Etunimi">
+				    <label for="InputFName">Etunimi</label>
+				    <input type="text" class="form-control" id="InputFName" placeholder="Etunimi" required>
 				</div>
 				<div class="form-group col-xs-6 col-sm-4 col-md-5">
-				    <label for="exampleInputPassword1">Sukunimi</label>
-				    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Sukunimi">
+				    <label for="InputSName">Sukunimi</label>
+				    <input type="text" class="form-control" id="InputSName" placeholder="Sukunimi" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-sm-6 col-md-6">
-				    <label for="exampleInputEmail1">Sähköposti</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Sähköposti">
+				    <label for="InputEmail">Sähköposti</label>
+				    <input type="email" class="form-control" id="InputEmail" placeholder="Sähköposti" required>
 				</div>
 				<div class="form-group col-sm-6 col-md-6">
-				    <label for="exampleInputEmail1">Puhelin</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Puhelin">
+				    <label for="InputPhone">Puhelin</label>
+				    <input type="email" class="form-control" id="InputPhone" placeholder="Puhelin">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-sm-6 col-md-6">
-				    <label for="exampleInputEmail1">Katuosoite</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Katuosoite">
+				    <label for="InputAddress">Katuosoite</label>
+				    <input type="email" class="form-control" id="InputAddress" placeholder="Katuosoite">
 				</div>
 				<div class="form-group col-xs-6 col-sm-3 col-md-3">
-				    <label for="exampleInputEmail1">Postinumero</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Postinumero">
+				    <label for="InputZip">Postinumero</label>
+				    <input type="email" class="form-control" id="InputZip" placeholder="Postinumero">
 				</div>
 				<div class="form-group col-xs-6 col-sm-3 col-md-3">
-				    <label for="exampleInputPassword1">Postitoimipaikka</label>
-				    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Postitoimipaikka">
+				    <label for="InputCity">Postitoimipaikka</label>
+				    <input type="email" class="form-control" id="InputCity" placeholder="Postitoimipaikka">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-sm-6 col-md-6"><br>
-				    <label for="exampleInputEmail1">Salasana</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+				    <label for="InputPW">Salasana</label>
+				    <input type="email" class="form-control" id="InputPW" placeholder="" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-sm-6 col-md-6">
-				    <label for="exampleInputEmail1">Syötä salasana uudelleen</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+				    <label for="InputPW2">Syötä salasana uudelleen</label>
+				    <input type="email" class="form-control" id="InputPW2" placeholder="" required>
 				</div>
 			</div>
 
@@ -107,7 +107,7 @@
 			<div class="row">
 				<div class="form-group col-xs-4 col-sm-4 col-md-3">
 					<label for="exampleInputEmail1">Sukupuoli</label>
-				    <select class="form-control">
+				    <select class="form-control" required>
 						<option>Mies</option>
 						<option>Muu</option>
 						<option>Nainen</option>
@@ -202,7 +202,7 @@
           				<input type="checkbox"> Ymmärrän tämän olevan sitova ilmoittautuminen ja olen valmis sitoutumaan 3kk:ksi.
         			</label>
         			<label class="col-sm-offset-1">
-          				<input type="checkbox"> Hyväksyn <a href="">käyttöehdot</a>.
+          				<input type="checkbox"> Hyväksyn <a data-toggle="modal" data-target="#myModal">käyttöehdot</a>.
         			</label>
       			</div>
   			</div>
@@ -213,6 +213,32 @@
 
 		</div>
 
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+	    <div class="modal-content">
+		    <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Käyttöehdot</h4>
+		    </div>
+		    <div class="modal-body">
+		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet lacus in sem commodo, quis suscipit orci volutpat. Suspendisse potenti. Nulla accumsan lacus purus, ac luctus eros finibus at. Proin in eros ac eros faucibus pellentesque. Maecenas suscipit lacus vel nisl pharetra gravida. Proin imperdiet enim id scelerisque accumsan. Proin ac massa quis nisi semper efficitur sit amet eu metus.</p>
+
+				<p>Nulla tempor sem vel enim laoreet sodales. Duis imperdiet velit lacus, in pretium urna aliquam quis. Mauris maximus porttitor feugiat. Nunc mattis arcu velit, ut elementum tellus facilisis congue. Proin vulputate magna et lectus aliquet varius. Suspendisse potenti. Sed vulputate orci id neque iaculis, vel ornare orci feugiat. Phasellus iaculis vehicula sagittis. Pellentesque ac mi id augue imperdiet aliquam ac vel diam. Mauris convallis lacus eget luctus tempus.</p>
+
+				<p>Nam euismod, nunc vel interdum lobortis, orci arcu convallis neque, iaculis gravida lectus nibh sed metus. Proin elementum, arcu id congue tempus, tellus nisl aliquet neque, sed aliquet lorem arcu a est. Morbi nec nunc nec diam consequat porttitor. Aliquam a efficitur eros. Morbi vulputate, purus ut luctus pellentesque, lorem eros dignissim sapien, eu ornare enim nunc vel diam. Nullam porta pharetra metus in convallis. Etiam bibendum rhoncus tincidunt. In hac habitasse platea dictumst. Duis eget pellentesque dui.</p>
+
+				<p>Curabitur aliquet, turpis sed aliquet convallis, tortor velit congue nunc, sit amet molestie erat ante tempor ligula. Fusce ornare quam eget ante feugiat, a aliquet erat eleifend. Aenean sit amet turpis consectetur mauris semper elementum. Proin viverra interdum magna, eget viverra purus molestie ut. Sed suscipit ornare neque ac auctor. Cras condimentum est ut lectus tincidunt, nec sodales diam auctor. Nullam gravida ligula erat, vitae congue mi suscipit laoreet. Fusce egestas quis dolor quis posuere. Cras vel nunc nibh. Ut pellentesque ex a congue ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus volutpat nec lacus et ultrices. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id tempus leo, in laoreet enim.</p>
+
+				<p>Suspendisse tortor dolor, elementum sit amet porta ut, condimentum condimentum enim. Sed congue porttitor sem vehicula finibus. Nam eu nisi ac libero ullamcorper elementum. Phasellus tristique turpis id iaculis suscipit. Fusce tincidunt lacus et est semper molestie. Cras auctor tortor odio, vitae suscipit purus pulvinar quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean mollis commodo felis ac malesuada. Mauris ultrices sed libero in blandit. Nunc id tempor nisi. Sed vel mi id turpis tempor pulvinar. Nunc iaculis consequat velit, quis ornare leo molestie in.</p>
+		    </div>
+		    <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Sulje</button>
+		    </div>
+		</div>
 	</div>
 </div>
 
