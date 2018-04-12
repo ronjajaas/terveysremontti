@@ -4,28 +4,23 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-a, a:hover {
-  color: #236823;
-}
-
 h1 {
-    text-align: center;
-    font-size: 50px;
-    margin: 70px 0 20px;
+	font-size: 50px;
+	margin-bottom: 40px;
 }
 
-.padding {
-    padding: 25px 0;
-    text-align: center;   
+.leveys {
+	width: 150px;
 }
 
-.sairaus label {
-    margin-right: 10px;
+.eka {
+	margin-top: 0;
 }
 
 .navbar {
     margin-bottom: 0;
     background-color:#47d147;
+    z-index: 9999;
     border: 0;
     font-size: 12px;
     text-transform: uppercase;
@@ -53,9 +48,8 @@ h1 {
     color: white;
 }
 
-.thumbnail {
-    padding: 0 10px 20px;
-    border-radius: 0; 
-    background: #ecfaec;
-    border: 1px solid #daf5da;
+.eka, .toka, .kolmas, .neljas, .viides, .kuudes, .seitsemas {
+	border: 0;
+	background: transparent;
+	width: 100%;
 }
