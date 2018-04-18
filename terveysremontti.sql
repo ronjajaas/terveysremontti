@@ -3,7 +3,7 @@
 
 
 
-CREATE TABLE kayttäja (
+CREATE TABLE kayttaja (
 	UserID 		INT(4),
 	FirstName 	VARCHAR(30),
 	LastName  	VARCHAR(30),
