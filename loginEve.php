@@ -4,12 +4,12 @@ session_start();
 require('connectdb.php');
 	// if the form is submitted or not
 	// if the form is submitted
-if (isset($_POST['salasana'])){
+if (isset($_POST['Salasana'])){
 	// assigning posted values to variables
-$email = $_POST['email'];
-$salasana = $_POST ['salasana'];
+$email = $_POST['Email'];
+$salasana = $_POST ['Salasana'];
 	// checking if the values exist in DB or not
-$query = "SELECT * FROM 'kayttaja' WHERE email='$email' and salasana ='$salasana'";
+$query = "SELECT * FROM 'kayttaja' WHERE Email='$email' and Salasana ='$salasana'";
 
 $result = mysqli_query($connection, $query) or die (mysqli_error($connection));
 $count = mysqli_num_rows($result);
@@ -17,7 +17,7 @@ $count = mysqli_num_rows($result);
 	// if the posted values are equal to the DB values, session will be created
 	
 if ($count == 1) {
-	$SESSION['email'] = $email;
+	$SESSION['Email'] = $email;
 }
 else {
 	// error message if the credentials don't match
