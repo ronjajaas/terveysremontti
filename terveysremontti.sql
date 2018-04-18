@@ -294,5 +294,8 @@ Update terveysremontti.inhokkiruoat
 Update terveysremontti.inhokkiruoat
 	SET UserID = 1114
 	WHERE InhokkiID = 5554	
+	
+	
+ALTER TABLE `login` ADD `Hash` VARCHAR(32) NOT NULL AFTER `Salasana`;
 				
 						
