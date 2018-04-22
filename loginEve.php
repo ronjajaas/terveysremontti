@@ -1,38 +1,28 @@
-<?php //start the Session
+<?php
+/* User login process, checks if user exists and password is correct */
 
-session_start();
-require('connectdb.php');
-	// if the form is submitted or not
-	// if the form is submitted
-if (isset($_POST['Salasana'])){
-	// assigning posted values to variables
-$email = $_POST['Email'];
-$salasana = $_POST ['Salasana'];
-	// checking if the values exist in DB or not
-$query = "SELECT * FROM 'kayttaja' WHERE Email='$email' and Salasana ='$salasana'";
+// Escape email to protect against SQL injections
+$email = $mysqli->escape_string($_POST['email']);
+$result = $mysqli->query("SELECT * FROM login WHERE Email='$email'");
 
-$result = mysqli_query($connection, $query) or die (mysqli_error($connection));
-$count = mysqli_num_rows($result);
+if ( $result->num_rows == 0 ){ // User doesn't exist
+    $_SESSION['message'] = "User with that email doesn't exist!";
+    header("location: error.php");
+}
+else { // User exists
+    $user = $result->fetch_assoc();
 
-	// if the posted values are equal to the DB values, session will be created
-	
-if ($count == 1) {
-	$SESSION['Email'] = $email;
-}
-else {
-	// error message if the credentials don't match
-	$errmsg = "Väärä salasana tai käyttäjätunnus";
-}	
-}
+	if ( $_POST['Salasana'] == $user['Salasana'] ) {
+        
+        $_SESSION['email'] = $user['email'];
+        
+        // This is how we'll know the user is logged in
+        $_SESSION['logged_in'] = true;
 
-	// if the user is logged in greet with a message
-if (isset($_SESSION['email'])){
-	$email = $_SESSION['email'];
-	
-	echo "Olet kirjautunut sisään";
-	
+        header("location: profile.php");
+    }
+    else {
+        $_SESSION['message'] = "You have entered wrong password, try again!";
+        header("location: error.php");
+    }
 }
-else {
-	
-}
-?>
