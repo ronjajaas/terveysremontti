@@ -222,7 +222,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	<a href="#myPage" title="To Top">
 		<i class="fa fa-angle-up" style="font-size:24px"></i>
 	</a>
-	<p>&copy; Eve Marin</p>
 </footer>
 
 	<!-- Optional JavaScript -->
