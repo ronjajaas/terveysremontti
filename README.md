@@ -1,6 +1,6 @@
 # terveysremontti
 
--Permanenent changes to your lifestyles-
+-Permanenent changes to your lifestyle-
 
 There is registration and signing in the front page. 
 In the registration page you can fill your first name, last name, email, password, phone number and adress and 
