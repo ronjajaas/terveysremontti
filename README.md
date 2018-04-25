@@ -1,8 +1,9 @@
 # terveysremontti
 
--Pysyviä muutoksia elintapoihisi-
+-Permanenent changes to your lifestyles-
 
-Sivustolla on kirjautuminen ja rekisteröityminen. 
-Rekisteröitymissivulla täytetään etunimi, sukunimi, sähköposti, salasana, puhelinnumero ja osoite ja hyväksytään käyttöehdot.
-Rekisteröitymisen jälkeen siirtyy sivu omalle profiii-sivulle , joka näyttää kuvan (kuvan voi vaihtaa, jos saamme sen toimimaan)
-sekä muut perustiedot (sähköposti, puhelin, osoite).
+There is registration and signing in the front page. 
+In the registration page you can fill your first name, last name, email, password, phone number and adress and 
+you must accept the terms in order to register. After registration you will be directed to your own profile page, 
+which shows a picture (we are trying to make the picture replaceable, but now it doesn't work), your name and 
+other information you filled in. 
