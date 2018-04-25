@@ -1,5 +1,5 @@
 <?php 
-/* Main page with two forms: sign up and log in */
+// yhteyden muodostaminen tietokantaan
 require 'connectdb.php';
 session_start();
 ?>
@@ -15,21 +15,16 @@ session_start();
     <link href="css/terveysremontti.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Hello, world!</title>
+    <title>Terveysremontti</title>
 </head>
 
 <?php 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
-    if (isset($_POST['login'])) { //user logging in
+	// kirjautuminen
+    if (isset($_POST['login'])) { 
 
         require 'loginEve.php';
-        
-    }
-    
-    elseif (isset($_POST['register'])) { //user registering
-        
-        require 'registerEve.php';
         
     }
 }
@@ -37,39 +32,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <body id="myPage">
 
-
-<nav id="topnav" class="navbar topnav fixed-top justify-content-center bg-light">
-	<ul class="nav">
-		<li class="nav-item"><a class="nav-link" href="#terveysremontti">Terveysremontti</a></li>
-		<li class="nav-item"><a class="nav-link" href="#ajankohtaista">Ajankohtaista</a></li>
-		<li class="nav-item"><a class="nav-link" href="#hinnasto">Hinnasto</a></li>
-		<li class="nav-item"><a class="nav-link" href="#yritys">Yritys</a></li>
-		<li class="nav-item"><a class="nav-link" href="#yhteys">Yhteystiedot</a></li>
-	</ul>
+<!-- päänavi -->
+<nav id="topnav" class="navbar navbar-expand-md topnav fixed-top bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse justify-content-center" id="navbar">
+		<ul class="nav">
+			<li class="nav-item"><a class="nav-link" href="#terveysremontti">Terveysremontti</a></li>
+			<li class="nav-item"><a class="nav-link" href="#ajankohtaista">Ajankohtaista</a></li>
+			<li class="nav-item"><a class="nav-link" href="#hinnasto">Hinnasto</a></li>
+			<li class="nav-item"><a class="nav-link" href="#yritys">Yritys</a></li>
+			<li class="nav-item"><a class="nav-link" href="#yhteys">Yhteystiedot</a></li>
+		</ul>
+	</div>
 </nav>
 
 <div data-spy="scroll" data-target="#topnav" data-offset="45" class="scroll">
 
+	<!-- kirjautuminen & rekisteröityminen -->
 	<div class="container-fluid kirjautuminen">
 		<div class="container">
 			<div class="row">
 				<div class="col"></div>
-				<div class="col-md-9">
+				<div class="col-xl-7 col-lg-8 col-md-10 col-sm-12">
 					<form action="index.php" method="post" autocomplete="off">
 						<div class="row">
-							<div class="col-md-3 text-right">
+							<div class="col-lg-3 col-md-3 col-sm-4 col-5 text-right">
 								<small><a href="forgot.php">Unohtuiko salasana?</a></small>
 							</div>
-							<div class="col-md-3">
+							<div class="col-lg-3 col-md-3 col-sm-4 col-4">
 								<input type="email" class="form-control form-control-sm" placeholder="esimerkki@email.com" name="email" autocomplete="off" required>
 							</div>
-							<div class="col-md-2">
+							<div class="col-lg-2 col-md-2 col-sm-4 col-3 text-right">
 								<input type="password" class="form-control form-control-sm" placeholder="Salasana" name="password" autocomplete="off" required>
 							</div>
-							<div class="col-md-2">
-								<button class="btn btn-success btn-sm" name="login">Kirjaudu sisään</button>
+							<div class="col-lg-2 col-md-2 col text-right">
+								<button class="btn btn-success btn-sm" name="login">Kirjaudu</button>
 							</div>
-							<div class="col-md-2 reuna">
+							<div class="col-lg-2 col-md-2 col text-left reuna">
 								<a class="btn btn-light btn-sm" href="rekisteroidy.php" role="button">Rekisteröidy</a>
 							</div>
 						</div>
@@ -79,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		</div>
 	</div>
 
+	<!-- karuselli -->
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

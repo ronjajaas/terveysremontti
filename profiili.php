@@ -35,16 +35,14 @@ else {
     <link href="css/profiili.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Hello, world!</title>
+    <title><?php echo $firstName.' '.$lastName; ?> - Terveysremontti</title>
 </head>
 
 <body>
 
 <nav id="topnav" class="navbar topnav fixed-top justify-content-center bg-light">
 	<ul class="nav">
-		<li class="nav-item"><a class="nav-link" href="index.php">Etusivu</a></li>
 		<li class="nav-item"><a class="nav-link active" href="profiili.php">Profiili</a></li>
-		<li class="nav-item"><a class="nav-link" href="#hinnasto">Verkkokauppa</a></li>
 	</ul>
 </nav>
 

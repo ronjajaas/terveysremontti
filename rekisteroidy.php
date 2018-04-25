@@ -16,7 +16,7 @@ session_start();
     <link href="css/kirjautuminen.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Hello, world!</title>
+    <title>Rekisteröidy - Terveysremontti</title>
 </head>
 
 <?php 
@@ -51,55 +51,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 
-		<form class="needs-validation" action="rekisteroidy.php" method="post" autocomplete="off" novalidate>
+			<form class="needs-validation" action="rekisteroidy.php" method="post" autocomplete="off" novalidate>
 
-			<div class="row">
-				<div class="form-group col-xs-6 col-sm-4 col-md-5">
-				    <label for="InputFName">Etunimi</label>
-				    <input type="text" class="form-control" autocomplete="off" name='firstName' placeholder="Etunimi" required>
-				    <div class="invalid-feedback">Syötä etunimi.</div>
+				<div class="row">
+					<div class="form-group col-6">
+					    <label>Etunimi</label>
+					    <input type="text" class="form-control" autocomplete="off" name='firstName' placeholder="Etunimi" required>
+					    <div class="invalid-feedback">Syötä etunimi.</div>
+					</div>
+					<div class="form-group col-6">
+					    <label>Sukunimi</label>
+					    <input type="text" class="form-control" autocomplete="off" name='lastName' placeholder="Sukunimi" required>
+					    <div class="invalid-feedback">Syötä sukunimi.</div>
+					</div>
 				</div>
-				<div class="form-group col-xs-6 col-sm-4 col-md-5">
-				    <label for="InputSName">Sukunimi</label>
-				    <input type="text" class="form-control" autocomplete="off" name='lastName' placeholder="Sukunimi" required>
-				    <div class="invalid-feedback">Syötä sukunimi.</div>
+				<div class="row">
+					<div class="form-group col-6">
+					    <label>Sähköposti</label>
+					    <input type="email" class="form-control" autocomplete="off" name='email' placeholder="Sähköposti" required>
+					    <div class="invalid-feedback">Syötä toimiva sähköpostiosoite.</div>
+					</div>
+					<div class="form-group col-6">
+					    <label>Salasana</label>
+					    <input type="password" class="form-control" autocomplete="off" name='password' placeholder="" required>
+					    <div class="invalid-feedback">Syötä salasana.</div>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-sm-6 col-md-6">
-				    <label for="InputEmail">Puhelin</label>
-				    <input type="text" class="form-control" autocomplete="off" name='phone' placeholder="Sähköposti" required>
-				    <div class="invalid-feedback">Syötä toimiva sähköpostiosoite.</div>
+				<div class="row">
+					<div class="form-group col-sm-12 col-md-4">
+					    <label for="InputEmail">Puhelin</label>
+					    <input type="text" class="form-control" autocomplete="off" name='phone' placeholder="000 000 0000">
+					</div>
+					<div class="form-group col-sm-12 col-md-8">
+					    <label for="InputPW">Osoite</label>
+					    <input type="text" class="form-control" autocomplete="off" name='address' placeholder="Osoite, postinumero, postitoimipaikka">
+					</div>
 				</div>
-				<div class="form-group col-sm-6 col-md-6"><br>
-				    <label for="InputPW">Osoite</label>
-				    <input type="text" class="form-control" autocomplete="off" name='address' placeholder="" required>
-				    <div class="invalid-feedback">Syötä salasana.</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-sm-6 col-md-6">
-				    <label for="InputEmail">Sähköposti</label>
-				    <input type="email" class="form-control" autocomplete="off" name='email' placeholder="Sähköposti" required>
-				    <div class="invalid-feedback">Syötä toimiva sähköpostiosoite.</div>
-				</div>
-				<div class="form-group col-sm-6 col-md-6"><br>
-				    <label for="InputPW">Salasana</label>
-				    <input type="password" class="form-control" autocomplete="off" name='password' placeholder="" required>
-				    <div class="invalid-feedback">Syötä salasana.</div>
-				</div>
-			</div>
 
-	    	<div class="custom-control custom-checkbox sairaus">	
-	    		<input type="checkbox" class="custom-control-input" id="customControlValidation14" required>
-	    		<label class="custom-control-label" for="customControlValidation14">Hyväksyn <a data-toggle="modal" data-target=".ehdot" href="#">käyttöehdot</a>.</label>
-	    		<div class="invalid-feedback">Sinun pitää hyväksyä käyttöehdot voidaksesi rekisteröityä.</div>
-			</div>
+		    	<div class="custom-control custom-checkbox sairaus">	
+		    		<input type="checkbox" class="custom-control-input" id="customControlValidation14" required>
+		    		<label class="custom-control-label" for="customControlValidation14">Hyväksyn <a data-toggle="modal" data-target=".ehdot" href="#">käyttöehdot</a>.</label>
+		    		<div class="invalid-feedback">Sinun pitää hyväksyä käyttöehdot voidaksesi rekisteröityä.</div>
+				</div>
 
-  			<div class="form-group text-center">
-      			<button type="submit" class="btn btn-light" name="register">Rekisteröidy</button>
-  			</div>
-		</form>
+	  			<div class="form-group text-center">
+	      			<button type="submit" class="btn btn-light" name="register">Rekisteröidy</button>
+	  			</div>
+			</form>
 
 		</div>
 
