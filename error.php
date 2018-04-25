@@ -6,7 +6,6 @@ session_start();
 <html>
 <head>
   <title>Error</title>
-  <?php include 'css/css.html'; ?>
 </head>
 <body>
 <div class="form">

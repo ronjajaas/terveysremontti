@@ -8,7 +8,7 @@ session_destroy();
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Error</title>
+  <title>Kirjaudu ulos</title>
   <?php include 'css/css.html'; ?>
 </head>
 
@@ -16,9 +16,9 @@ session_destroy();
     <div class="form">
           <h1>Thanks for stopping by</h1>
               
-          <p><?= 'You have been logged out!'; ?></p>
+          <p><?= 'Olet nyt kirjautunut ulos!'; ?></p>
           
-          <a href="testiIndex.php"><button class="button button-block"/>Home</button></a>
+          <a href="index.php"><button class="button button-block"/>Home</button></a>
 
     </div>
 </body>

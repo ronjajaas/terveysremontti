@@ -1,28 +1,39 @@
 <?php
-/* User login process, checks if user exists and password is correct */
+/* Käyttäjän kirjautuminen. Tarkistaa onko käyttäjää olemassa ja onko salasana oikein. */
 
-// Escape email to protect against SQL injections
 $email = $mysqli->escape_string($_POST['email']);
-$result = $mysqli->query("SELECT * FROM login WHERE Email='$email'");
+$result = $mysqli->query("SELECT * FROM accounts WHERE email='$email'");
 
-if ( $result->num_rows == 0 ){ // User doesn't exist
-    $_SESSION['message'] = "User with that email doesn't exist!";
-    header("location: error.php");
+// Kun käyttäjää ei ole olemassa:
+if ( $result->num_rows == 0 ){ 
+    $_SESSION['message'] = "Käyttäjää tällä sähköpostilla ei ole olemassa!"; // viesti, joka näytetään error-sivulla.
+    header("location: error.php"); // käyttäjä ohjataan error-sivulle.
 }
-else { // User exists
+
+// Kun käyttäjä on olemassa:
+else { 
     $user = $result->fetch_assoc();
 
-	if ( $_POST['Salasana'] == $user['Salasana'] ) {
+    // jos salasana on oikein:
+	if ( password_verify($_POST['password'], $user['password']) ) {
         
         $_SESSION['email'] = $user['email'];
+        $_SESSION['firstName'] = $user['firstName'];
+        $_SESSION['lastName'] = $user['lastName'];
+        $_SESSION['phone'] = $user['phone'];
+        $_SESSION['address'] = $user['address'];
+        $_SESSION['active'] = $user['active'];
         
-        // This is how we'll know the user is logged in
+        // Tällä varmistetaan onko käyttäjä kirjautuneena sisälle. 
         $_SESSION['logged_in'] = true;
 
-        header("location: profile.php");
+        // Kun käyttäjä on kirjautunut, hänet ohjataan profiili.php:seen.
+        header("location: profiili.php");
     }
+
+    // jos salasana ei ole oikein:
     else {
-        $_SESSION['message'] = "You have entered wrong password, try again!";
-        header("location: error.php");
+        $_SESSION['message'] = "You have entered wrong password, try again!"; // viesti, joka näytetään error-sivulla
+        header("location: error.php"); // käyttäjä ohjataan error-sivulle. 
     }
 }

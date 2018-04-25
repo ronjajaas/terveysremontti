@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     
     elseif (isset($_POST['register'])) { //user registering
         
-        require 'register.php';
+        require 'registerEve.php';
         
     }
 }
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 								<input type="email" class="form-control form-control-sm" placeholder="esimerkki@email.com" name="email" autocomplete="off" required>
 							</div>
 							<div class="col-md-2">
-								<input type="password" class="form-control form-control-sm" placeholder="Salasana" name="Salasana" autocomplete="off" required>
+								<input type="password" class="form-control form-control-sm" placeholder="Salasana" name="password" autocomplete="off" required>
 							</div>
 							<div class="col-md-2">
 								<button class="btn btn-success btn-sm" name="login">Kirjaudu sisään</button>

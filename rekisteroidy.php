@@ -1,3 +1,8 @@
+<?php 
+/* Main page with two forms: sign up and log in */
+require 'connectdb.php';
+session_start();
+?>
 <!doctype html>
 <html lang=fi>
 <head>
@@ -13,6 +18,24 @@
 
     <title>Hello, world!</title>
 </head>
+
+<?php 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+{
+    if (isset($_POST['login'])) { //user logging in
+
+        require 'loginEve.php';
+        
+    }
+    
+    elseif (isset($_POST['register'])) { //user registering
+        
+        require 'registerEve.php';
+        
+    }
+}
+?>
+
 <body>
 
 <nav id="topnav" class="navbar topnav fixed-top justify-content-center bg-light">
@@ -28,169 +51,53 @@
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 
-		<form class="needs-validation" novalidate>
-			<h2>Perustiedot</h2>
+		<form class="needs-validation" action="rekisteroidy.php" method="post" autocomplete="off" novalidate>
 
 			<div class="row">
 				<div class="form-group col-xs-6 col-sm-4 col-md-5">
 				    <label for="InputFName">Etunimi</label>
-				    <input type="text" class="form-control" id="InputFName" placeholder="Etunimi" required>
+				    <input type="text" class="form-control" autocomplete="off" name='firstName' placeholder="Etunimi" required>
 				    <div class="invalid-feedback">Syötä etunimi.</div>
 				</div>
 				<div class="form-group col-xs-6 col-sm-4 col-md-5">
 				    <label for="InputSName">Sukunimi</label>
-				    <input type="text" class="form-control" id="InputSName" placeholder="Sukunimi" required>
+				    <input type="text" class="form-control" autocomplete="off" name='lastName' placeholder="Sukunimi" required>
 				    <div class="invalid-feedback">Syötä sukunimi.</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-sm-6 col-md-6">
-				    <label for="InputEmail">Sähköposti</label>
-				    <input type="email" class="form-control" id="InputEmail" placeholder="Sähköposti" required>
+				    <label for="InputEmail">Puhelin</label>
+				    <input type="text" class="form-control" autocomplete="off" name='phone' placeholder="Sähköposti" required>
 				    <div class="invalid-feedback">Syötä toimiva sähköpostiosoite.</div>
 				</div>
-				<div class="form-group col-sm-6 col-md-6">
-				    <label for="InputPhone">Puhelin</label>
-				    <input type="tel" class="form-control" id="InputPhone" placeholder="Puhelin">
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-sm-6 col-md-6">
-				    <label for="InputAddress">Katuosoite</label>
-				    <input type="text" class="form-control" id="InputAddress" placeholder="Katuosoite">
-				</div>
-				<div class="form-group col-xs-6 col-sm-3 col-md-3">
-				    <label for="InputZip">Postinumero</label>
-				    <input type="number" class="form-control" id="InputZip" placeholder="Postinumero">
-				</div>
-				<div class="form-group col-xs-6 col-sm-3 col-md-3">
-				    <label for="InputCity">Postitoimipaikka</label>
-				    <input type="text" class="form-control" id="InputCity" placeholder="Postitoimipaikka">
-				</div>
-			</div>
-			<div class="row">
 				<div class="form-group col-sm-6 col-md-6"><br>
-				    <label for="InputPW">Salasana</label>
-				    <input type="password" class="form-control" id="InputPW" placeholder="" required>
+				    <label for="InputPW">Osoite</label>
+				    <input type="text" class="form-control" autocomplete="off" name='address' placeholder="" required>
 				    <div class="invalid-feedback">Syötä salasana.</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-sm-6 col-md-6">
-				    <label for="InputPW2">Syötä salasana uudelleen</label>
-				    <input type="password" class="form-control" id="InputPW2" placeholder="" required>
-				    <div class="invalid-feedback">Syötä salasana uudelleen.</div>
+				    <label for="InputEmail">Sähköposti</label>
+				    <input type="email" class="form-control" autocomplete="off" name='email' placeholder="Sähköposti" required>
+				    <div class="invalid-feedback">Syötä toimiva sähköpostiosoite.</div>
+				</div>
+				<div class="form-group col-sm-6 col-md-6"><br>
+				    <label for="InputPW">Salasana</label>
+				    <input type="password" class="form-control" autocomplete="off" name='password' placeholder="" required>
+				    <div class="invalid-feedback">Syötä salasana.</div>
 				</div>
 			</div>
 
-			<h2>Terveys</h2>
-
-			<div class="row">
-				<div class="form-group col-xs-4 col-sm-4 col-md-3">
-					<label for="exampleInputEmail1">Sukupuoli</label>
-				    <select class="form-control" required>
-						<option>Mies</option>
-						<option>Muu</option>
-						<option>Nainen</option>
-					</select>
-					<div class="invalid-feedback">Please choose a username.</div>
-				</div>
-				<div class="form-group col-xs-4 col-sm-4 col-md-3">
-				    <label for="exampleInputEmail1">Pituus</label>
-				    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="cm">
-				</div>
-				<div class="form-group col-xs-4 col-sm-4 col-md-3">
-				    <label for="exampleInputPassword1">Paino</label>
-				    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="kg">
-				</div>
+	    	<div class="custom-control custom-checkbox sairaus">	
+	    		<input type="checkbox" class="custom-control-input" id="customControlValidation14" required>
+	    		<label class="custom-control-label" for="customControlValidation14">Hyväksyn <a data-toggle="modal" data-target=".ehdot" href="#">käyttöehdot</a>.</label>
+	    		<div class="invalid-feedback">Sinun pitää hyväksyä käyttöehdot voidaksesi rekisteröityä.</div>
 			</div>
 
-			<h3>Terveydentila</h3>
-
-			<div class="checkbox sairaus">
-				<label>
-				    <input type="checkbox" value="">
-				    Raskaus 
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Sydän- ja verisuonisairaus
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Tyypin 1 diabetes
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Tyypin 2 diabetes
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Verenpaine
-				</label>
-			</div>
-
-			<label for="exampleInputPassword1">Muu, mikä?</label>
-			<textarea class="form-control" rows="3"></textarea>
-
-			<h2>Ruokavalio</h2>
-
-			<h3>Allergiat ja erityisruokavaliot</h3>
-
-			<div class="checkbox sairaus">
-				<label>
-				    <input type="checkbox" value="">
-				    Kala- ja äyriäiset 
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Keliakia
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Laktoosi-intoleranssi
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Lakto-ovo-vegetaarinen
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Maito
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Pähkinä
-				</label>
-				<label>
-				    <input type="checkbox" value="">
-				    Vegaani
-				</label>
-			</div>
-
-			<label for="exampleInputPassword1">Muu, mikä?</label>
-			<textarea class="form-control" rows="3"></textarea>
-
-			<h3>Inhokit</h3>
-
-			<label for="exampleInputPassword1">Ruuat ja ruoka-aineet, joista et pidä</label>
-			<textarea class="form-control" rows="3"></textarea>
-
-			<br>
-
-			<div class="form-group">
-      			<div class="form-check">
-      				<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      				<label class="form-check-label" for="invalidCheck">Ymmärrän tämän olevan sitova ilmoittautuminen ja olen valmis sitoutumaan 3kk:ksi.</label>
-      			</div>
-      			<div class="form-check">
-      				<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      				<label class="form-check-label" for="invalidCheck">Hyväksyn <a data-toggle="modal" data-target=".ehdot" href="#">käyttöehdot</a>.</label>
-      				<div class="invalid-feedback">Sinun pitää hyväksyä käyttöehdot voidaksesi rekisteröityä.</div>
-      			</div>
-  			</div>
   			<div class="form-group text-center">
-      			<button type="submit" class="btn btn-light">Rekisteröidy</button>
+      			<button type="submit" class="btn btn-light" name="register">Rekisteröidy</button>
   			</div>
 		</form>
 
