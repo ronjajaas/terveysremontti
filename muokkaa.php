@@ -38,9 +38,7 @@ $db = mysqli_connect('127.0.0.1:49207', 'azure', '6#vWHD_$', 'terveysremontti');
 
         $result = mysqli_query($db, $sql);
 
-        echo "Tiedot päivitetty onnistuneesti";
-
-        echo $sql;
+        $success = "Tiedot päivitetty onnistuneesti";
            
     }
 ?>
@@ -51,28 +49,29 @@ $db = mysqli_connect('127.0.0.1:49207', 'azure', '6#vWHD_$', 'terveysremontti');
 
 		<form method="post" action="<?php $_PHP_SELF ?>">
             <div class="form-group row">
-    			<label for="staticEmail" class="col-sm-2 col-form-label">Puhelin</label>
-    			<div class="col-sm-10">
+    			<label for="staticEmail" class="col-sm-2 col-md-1 col-form-label">Puhelin</label>
+    			<div class="col-6">
       				<input name="phone" id="emp_id" type="text" class="form-control">
     			</div>
   			</div>
   			<div class="form-group row">
-    			<label for="staticEmail" class="col-sm-2 col-form-label">Osoite</label>
-    			<div class="col-sm-10">
+    			<label for="staticEmail" class="col-sm-2 col-md-1 col-form-label">Osoite</label>
+    			<div class="col-6">
       				<input name="address" id="emp_salary" type="text" class="form-control">
     			</div>
   			</div>
-  			<div class="form-group row">	
-	  			<div class="col">
+  			<div class="form-group row">
+  				<div class="col-sm-2 col-md-1"></div>	
+	  			<div class="col-2 col-md-2 col-lg-1">
 	    			<button name="update" id="update" type="submit" class="btn btn-light">Lähetä</button>
 	    		</div>
-	    		<div class="col">
-	    			<a class="btn btn-primary" href="profiili.php" role="button">Palaa takaisin</a>
+	    		<div class="col-2 col-md-2 col-lg-1">
+	    			<a class="btn btn-link" href="profiili.php" role="button">Palaa takaisin</a>
 	    		</div>
   			</div>                 
         </form>
 
-        <p><?php $success ?></p>
+        <p><?php echo $success ?></p>
 	</div>
 </div>
 
