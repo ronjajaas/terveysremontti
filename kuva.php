@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$db = mysqli_connect('127.0.0.1:49207', 'azure', '6#vWHD_$', 'terveysremontti');
+$db = mysqli_connect('127.0.0.1:49207', 'azure', '******', 'terveysremontti');
 
 $email = $_SESSION['email'];
 $sql = "SELECT * FROM accounts WHERE email='$email'";
