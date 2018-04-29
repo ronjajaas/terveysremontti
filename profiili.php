@@ -13,7 +13,7 @@ if ( $_SESSION['logged_in'] != 1 ) {
 // käyttäjä on kirjautuneena sisälle:
 else {
     // Makes it easier to read
-    $db = mysqli_connect('127.0.0.1:49207', 'azure', '6#vWHD_$', 'terveysremontti');
+    $db = mysqli_connect('127.0.0.1:49207', 'azure', '******', 'terveysremontti');
     $email = $_SESSION['email'];
 
     $sql = "SELECT * FROM accounts WHERE email='$email'";
