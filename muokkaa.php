@@ -2,7 +2,7 @@
 <?php 
 /* Main page with two forms: sign up and log in */
 session_start();
-$db = mysqli_connect('127.0.0.1:49207', 'azure', '6#vWHD_$', 'terveysremontti');
+$db = mysqli_connect('127.0.0.1:49207', 'azure', '*******', 'terveysremontti');
 ?>
 <!doctype html>
 <html lang=fi>
