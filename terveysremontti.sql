@@ -1,5 +1,19 @@
 
+// this is the table we used allthough we have a lot of tables in this database.
+// we could not make php to insert data to multiple tables and that is why we have this one table
 
+CREATE TABLE accounts (
+	userID   INT(11) NOT NULL AUTO_INCREMENT,
+	firstName VARCHAR(50) NOT NULL,
+	lastName  VARCHAR(50) NOT NULL,
+	email     VARCHAR(100) NOT NULL,
+	address   VARCHAR(100 NOT NULL,
+	phone     VARCHAR(10) NOT NULL,
+	password VARCHAR(100) NOT NULL,
+	hash     VARCHAR(32) NOT NULL,
+	active   BOOLEAN DEFAULT 0 NOT NULL,
+	PRIMARY KEY (userID)
+);
 
 
 
